@@ -11,6 +11,7 @@
             <div class="navbar">
                 <div class="navbar-inner">
                     <ul class="nav">
+                        <li><a href="/NewEvent.html">Create Event</a></li>
                     </ul>
                 </div>
             </div>
@@ -21,15 +22,6 @@
                         <h2 ng-class="myclass" ng-bind-template="{{event.name | uppercase}} {{event.date}}"></h2>
                     </div>
                 </div>
-
-                <button class="btn" ng-disabled="buttonDisabled">Disabled</button>
-
-                <div ng-bind-html="snippet">some title</div>
-
-                <h2 ng-show="boolValue">Show This</h2>
-                <h2 ng-hide="boolValue">Hide This</h2>
-
-                <div ng-non-bindable>{{Double curvy braces}}</div>
 
                 <div class="row">
                     <div class="span3">
@@ -45,10 +37,21 @@
                     </div>
                 </div>
 
+                <!--
+                <button class="btn" ng-disabled="buttonDisabled">Disabled</button>
+
+                <div ng-bind-html="snippet">some title</div>
+
+                <h2 ng-show="boolValue">Show This</h2>
+                <h2 ng-hide="boolValue">Hide This</h2>
+
+                <div ng-non-bindable>{{Double curvy braces}}</div>
+
                 {{['First','Middle','Last'][2]}}<br />
                 {{3.14159265359 | number:2}}<br />
                 {{3.14159265359 | currency:4}}<br />
                 <div>{{ {a:3, b:'String', c:{aa:1, bb:'Another string'} } | json }}</div>
+                -->
 
                 <hr />
 
@@ -99,6 +102,7 @@
         <script src="/lib/angular/angular-sanitize.js"></script>
         <script src="/js/app.js"></script>
         <script src="/js/controllers/EventController.js"></script>
+        <script src="/js/services/EventData.js"></script>
         <script src="/js/filters.js"></script>
     </body>
 </html>
