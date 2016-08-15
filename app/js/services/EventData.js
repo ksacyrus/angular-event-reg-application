@@ -1,6 +1,15 @@
-eventsApp.factory('eventData', function() {
+eventsApp.factory('eventData', function($http, $log) {
     return {
-        event: {
+        getEvent: function (successcb) {
+            $http({method: 'GET', url: '/data/event/1'}).
+                success(function (data, status, headers, config) {
+                    successcb(data);
+                }).
+                error(function (data, status, headers, config) {
+                    $log.warn(data, status, headers, config);
+                });
+        }
+        /*event: {
             name: 'Angular Boot Camp',
             date: Date.now(),
             time: '10:30 am',
@@ -36,6 +45,6 @@ eventsApp.factory('eventData', function() {
                     upVoteCount: 0
                 }
             ]
-        }
+        }*/
     };
 });
