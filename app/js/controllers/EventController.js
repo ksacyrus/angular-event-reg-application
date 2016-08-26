@@ -1,7 +1,7 @@
 'use strict';
 
 eventsApp.controller('EventController',
-    function EventController($scope, eventData, $log, $anchorScroll, $routeParams) {
+    function EventController($scope, eventData, $log, $anchorScroll, $routeParams, $route) {
         
         $scope.sortorder = '-upVoteCount';
         eventData.getEvent($routeParams.eventId)
@@ -13,6 +13,10 @@ eventsApp.controller('EventController',
             .catch(function (response) {
                     $log.warn(response);
             });
+        
+        $log.log($route.current.foo);
+        $log.log($route.current.params.foo1); //localhost:8000/#/event/1?foo1=myBar
+        $log.log($route.current.params.eventId);
         /*eventData.getEvent()
             .success(function(event) {
                 $scope.event = event;
