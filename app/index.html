@@ -3,15 +3,16 @@
 <head>
     <meta charset="utf-8">
     <title>Locale Sample</title>
+    <base href="/"/>
     <link rel="stylesheet" href="/css/bootstrap.min.css"/>
     <link rel="stylesheet" href="/css/app.css"/>
 </head>
 <body>
 <div class="container">
-    <div class="navbar">
+    <div class="navbar" ng-controller="MainMenuController">
         <div class="navbar-inner">
             <ul class="nav">
-                <li><a href="#/newEvent">Create Event</a></li>
+                <li><a href="#" ng-click="createEvent()">Create Event</a></li>
             </ul>
         </div>
     </div>
@@ -29,6 +30,7 @@
 <script src="/js/controllers/EventController.js"></script>
 <script src="/js/controllers/EditEventController.js"></script>
 <script src="/js/controllers/EventListController.js"></script>
+<script src="/js/controllers/MainMenuController.js"></script>
 <script src="/js/filters.js"></script>
 <script src="/js/services/EventData.js"></script>
 </body>
